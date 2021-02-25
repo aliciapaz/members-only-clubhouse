@@ -10,6 +10,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+    <%
+=begin%>
+ Error messages from devise
+<%
+=end%>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
   <body>
     <%= yield %>
   </body>
