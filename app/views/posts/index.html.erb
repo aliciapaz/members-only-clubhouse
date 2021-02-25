@@ -1,7 +1,26 @@
-<h1>Clubhouse Blog</h1>
-<h2>Members Only!</h2>
 
-<% @posts.each do |post| %>
-  <%= post.title %><br/>
-  <%= post.body %>
-<% end %>
+
+<div class="container-fluid">
+  <div class="d-flex">
+    <div class="col-4">
+      <h3><%= @posts.last.title %></h3>
+      <p><%= @posts.last.body %></p>
+    </div>
+    <div class="col-4 mx-auto">
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          Recent posts from members
+        </div>
+        <ul class="list-group list-group-flush">
+          <% @posts.each do |post| %>
+            <li class="list-group-item"><%= link_to post.title, post %><br/></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

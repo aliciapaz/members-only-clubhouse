@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class= "d-flex flex-column align-items-center">
+    <h1><%= @post.title %></h1>
+      <% if member_signed_in? %>
+              <h5>By <%= @member.name %></h5>
+              <small><%= @member.membername %></small>
+      <% end %>
+
+    <div>
+      <%= @post.body %>
+    </div>
+  </div>
+</div>

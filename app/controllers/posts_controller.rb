@@ -12,4 +12,9 @@ class PostsController < ApplicationController
     
   end
 
+  def  show
+    @post = Post.find(params[:id])
+    @member = Member.find(@post.member_id)
+  end
+
 end
