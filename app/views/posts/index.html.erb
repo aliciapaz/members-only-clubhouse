@@ -1,0 +1,7 @@
+<h1>Clubhouse Blog</h1>
+<h2>Members Only!</h2>
+
+<% @posts.each do |post| %>
+  <%= post.title %><br/>
+  <%= post.body %>
+<% end %>
