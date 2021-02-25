@@ -8,6 +8,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
   </head>
 
     <%
@@ -15,6 +17,27 @@
  Error messages from devise
 <%
 =end%>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+        </li>
+      <form class="d-flex">
+        <% if member_signed_in? %>
+          <%= link_to current_member.membername, edit_member_registration_path, class: "btn btn-light" %>
+          <%= link_to 'Log out', destroy_member_session_path, method: :delete, class: "btn btn-primary" %>
+        <% else %>
+          <%= link_to 'Sign up', new_member_registration_path, class: "btn btn-primary" %>
+          <%= link_to 'Sign in', new_member_session_path, class: "btn btn-primary" %>
+        <% end %>
+      </form>
+    </div>
+  </div>
+</nav>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
