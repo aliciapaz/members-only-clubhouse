@@ -1,22 +1,26 @@
-
+<div class="banner container-fluid">
+  <h1>Welcome to the Clubhouse Blog</h1>
+</div>
 
 <div class="container-fluid">
   <div class="d-flex">
-    <div class="main-article col-8">
+    <div class="main-article col-9">
       <article>
         <h3 class="main-article-title"><%= @posts.last.title %></h3>
-        <div class="main-article-author">
+        <div class="main-article-body">
+          <div class="main-article-author">
           <% if member_signed_in? %>
             <p>By <%= Member.find(@posts.last.member_id).name  %></p>
           <% else %>
             <p>By Anonymous member</p>
           <% end %>
+          </div>
+          <p><%= @posts.last.body %></p>
         </div>
-        <p><%= @posts.last.body %></p>
       </article>
     </div>
-    <div class="col-4 mx-auto">
-      <div class="card" style="width: 24rem;">
+    <div class="col-3 mx-auto">
+      <div class="card mx-auto" style="width: 24rem;">
         <div class="card-header">
           Recent posts from members
         </div>

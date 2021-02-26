@@ -2,16 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.banner h1 {
+  text-align: center;
+  margin: 2rem 0 4rem 0; 
+}
+
 .main-article {
   max-width: 60%;
-  margin: 0 auto;
-  padding: 0 6rem 0 6rem;
+  margin: 0 auto;;
 }
 
 .main-article-title {
   text-align: center;
   padding: 2rem 0;
-  margin-bottom: 6rem; 
+  margin-bottom: 3rem; 
+}
+
+.main-article-body {
+  max-width: 60%;
+  margin: 0 auto;
 }
 
 .main-article-author {
