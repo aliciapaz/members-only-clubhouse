@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Deployed app](https://infinite-gorge-45333.herokuapp.com/)
 
 
 ## Getting Started
