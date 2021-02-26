@@ -5,19 +5,21 @@
 <div class="container-fluid">
   <div class="d-flex">
     <div class="main-article col-9">
-      <article>
-        <h3 class="main-article-title"><%= @posts.last.title %></h3>
-        <div class="main-article-body">
-          <div class="main-article-author">
-          <% if member_signed_in? %>
-            <p>By <%= Member.find(@posts.last.member_id).name  %></p>
-          <% else %>
-            <p>By Anonymous member</p>
-          <% end %>
+      <% if !@posts.empty? %>
+        <article>
+          <h3 class="main-article-title"><%= @posts.last.title %></h3>
+          <div class="main-article-body">
+            <div class="main-article-author">
+            <% if member_signed_in? %>
+              <p>By <%= Member.find(@posts.last.member_id).name  %></p>
+            <% else %>
+              <p>By Anonymous member</p>
+            <% end %>
+            </div>
+            <p><%= @posts.last.body %></p>
           </div>
-          <p><%= @posts.last.body %></p>
-        </div>
-      </article>
+        </article>
+      <% end %>
     </div>
     <div class="col-3 mx-auto">
       <div class="card mx-auto" style="width: 24rem;">
@@ -25,8 +27,10 @@
           Recent posts from members
         </div>
         <ul class="list-group list-group-flush">
-          <% @posts.each do |post| %>
-            <li class="list-group-item"><%= link_to post.title, post %><br/></li>
+          <% if !@posts.empty? %>
+            <% @posts.each do |post| %>
+              <li class="list-group-item"><%= link_to post.title, post %><br/></li>
+            <% end %>
           <% end %>
         </ul>
       </div>
