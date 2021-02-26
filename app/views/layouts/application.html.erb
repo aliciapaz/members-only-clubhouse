@@ -22,7 +22,7 @@
   <div class="container-fluid d-flex justify-content-end">
     <form class="d-flex">
       <% if member_signed_in? %>
-        <%= link_to current_member.membername, edit_member_registration_path, class: "btn btn-light mx-1" %>
+        <%= link_to current_member.name, edit_member_registration_path, class: "btn btn-light mx-1" %>
         <%= link_to 'Log out', destroy_member_session_path, method: :delete, class: "btn btn-primary mx-1" %>
       <% else %>
         <%= link_to 'Sign up', new_member_registration_path, class: "btn btn-primary mx-1" %>

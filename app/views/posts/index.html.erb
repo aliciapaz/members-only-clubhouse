@@ -2,12 +2,21 @@
 
 <div class="container-fluid">
   <div class="d-flex">
-    <div class="col-4">
-      <h3><%= @posts.last.title %></h3>
-      <p><%= @posts.last.body %></p>
+    <div class="main-article col-8">
+      <article>
+        <h3 class="main-article-title"><%= @posts.last.title %></h3>
+        <div class="main-article-author">
+          <% if member_signed_in? %>
+            <p>By <%= Member.find(@posts.last.member_id).name  %></p>
+          <% else %>
+            <p>By Anonymous member</p>
+          <% end %>
+        </div>
+        <p><%= @posts.last.body %></p>
+      </article>
     </div>
     <div class="col-4 mx-auto">
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 24rem;">
         <div class="card-header">
           Recent posts from members
         </div>
