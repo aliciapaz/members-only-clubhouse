@@ -1,10 +1,7 @@
 <div class="container-fluid">
   <div class= "d-flex flex-column align-items-center">
     <h1><%= @post.title %></h1>
-      <% if member_signed_in? %>
-              <h5>By <%= @member.name %></h5>
-              <small><%= @member.membername %></small>
-      <% end %>
+        <h5><%= post_author(Member.find(@post.member_id)) %></h5>
 
     <div>
       <%= @post.body %>
