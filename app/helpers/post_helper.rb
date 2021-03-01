@@ -4,7 +4,9 @@ module PostHelper
   end
 
   def main_post_author(posts)
-    member_signed_in? ? "By #{Member.find(posts.last.member_id).name}" : 'By Anonymous member'
+    if !posts.empty?
+      member_signed_in? ? "By #{Member.find(posts.last.member_id).name}" : 'By Anonymous member'
+    end
   end
 
   def main_post_body(posts)
