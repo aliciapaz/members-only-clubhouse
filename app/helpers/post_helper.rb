@@ -1,3 +1,5 @@
+# rubocop:disable Style/GuardClause
+
 module PostHelper
   def main_post_title(posts)
     posts.last.title unless posts.empty?
@@ -49,3 +51,5 @@ module PostHelper
     end
   end
 end
+
+# rubocop:enable Style/GuardClause
