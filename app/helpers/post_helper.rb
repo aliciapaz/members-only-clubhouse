@@ -11,4 +11,8 @@ module PostHelper
     posts.last.body if !posts.empty?
   end
 
+  def post_author(member)
+    member_signed_in? ? "By " + member.name : "By Anonymous member"
+  end
+
 end
