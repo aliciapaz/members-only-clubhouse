@@ -1,5 +1,5 @@
-<% if !@posts.empty? %>
-    <% @posts.each do |post| %>
-    <li class="list-group-item"><%= link_to post.title, post %><br/></li>
-  <% end %>
-<% end %>
+<li class="list-group-item"><%= post_list_last(@posts) %><br/></li>
+<li class="list-group-item"><%= post_list_snd_last(@posts) %><br/></li>
+<li class="list-group-item"><%= post_list_third_last(@posts) %><br/></li>
+<li class="list-group-item"><%= post_list_fourth_last(@posts) %><br/></li>
+<li class="list-group-item"><%= post_list_fifth_last(@posts) %><br/></li>
