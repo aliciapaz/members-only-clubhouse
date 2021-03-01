@@ -1,0 +1,5 @@
+<% if !@posts.empty? %>
+    <% @posts.each do |post| %>
+    <li class="list-group-item"><%= link_to post.title, post %><br/></li>
+  <% end %>
+<% end %>

@@ -22,22 +22,11 @@
           Recent posts from members
         </div>
         <ul class="list-group list-group-flush">
-          <%= list(@posts) %>
+          <%= render 'post_list' %>
         </ul>
       </div>
     </div>
   </div>
 </div>
-
-
-          <%
-=begin%>
- <% if !@posts.empty? %>
-            <% @posts.each do |post| %>
-              <li class="list-group-item"><%= link_to post.title, post %><br/></li>
-            <% end %>
-          <% end %> 
-<%
-=end%>
 
 

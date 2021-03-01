@@ -11,8 +11,4 @@ module PostHelper
     posts.last.body if !posts.empty?
   end
 
-  def list(posts)
-    link_to posts.find(2).member_id, posts.last, class: "list-group-item"
-    link_to posts.find(2).title, posts.last, class: "list-group-item"
-  end
 end
