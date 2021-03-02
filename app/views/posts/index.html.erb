@@ -1,0 +1,32 @@
+<div class="banner container-fluid">
+  <h1>Welcome to the Clubhouse Blog</h1>
+</div>
+
+<div class="container-fluid">
+  <div class="d-flex">
+    <div class="main-article col-9">
+        <article>
+          <h3 class="main-article-title"><%= main_post_title(@posts) %></h3>
+          <div class="main-article-body">
+            <div class="main-article-author">
+              <p><%= main_post_author(@posts)  %></p>
+            </div>
+            <p><%= main_post_body(@posts) %></p>
+          </div>
+        </article>
+
+    </div>
+    <div class="col-3 mx-auto">
+      <div class="card mx-auto" style="width: 24rem;">
+        <div class="card-header">
+          Recent posts from members
+        </div>
+        <ul class="list-group list-group-flush">
+          <%= render 'post_list' %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+

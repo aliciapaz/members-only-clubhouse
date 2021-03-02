@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <div class= "d-flex flex-column align-items-center">
+    <h1><%= @post.title %></h1>
+        <h5><%= post_author(Member.find(@post.member_id)) %></h5>
+
+    <div>
+      <%= @post.body %>
+    </div>
+  </div>
+</div>
